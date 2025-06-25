@@ -71,4 +71,3 @@ Open Telegram and message your bot: [@satyamintern_bot](https://t.me/satyaminter
 
 ---
 
-> Developed with ❤️ by Satyam Vohra for internship purposes.
