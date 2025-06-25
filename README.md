@@ -1,69 +1,74 @@
-# django_internship_project
-A Django-based internship portal integrated with Telegram Bot and JWT authentication. Includes user data handling, secure API endpoints, and polling/webhook support for Telegram interactions.
+# Django Internship Project – Telegram Bot Integration 🤖
 
+This project is a Django-based internship system integrated with a Telegram bot (`@satyamintern_bot`) to interact with users.
 
-# 🧠 Django Internship Project
+## 💡 Features
 
-This is a full-stack internship management system built with **Django** and **Django REST Framework**, integrated with a **Telegram Bot**. It supports:
-
-- ✅ User registration via Telegram bot commands (`/start`, etc.)
-- ✅ JWT authentication for secure API access
-- ✅ SQLite database integration
-- ✅ Polling-based Telegram bot handling
-- ✅ Option to switch to Webhook using NGROK
-- ✅ Celery configured (with memory broker for testing)
-
-## 📦 Tech Stack
-
-- Django 5+
-- Django REST Framework (DRF)
-- Python 3.12
-- SQLite
-- Telegram Bot API (via pyTelegramBotAPI)
-- Celery
-- Ngrok (for webhook testing)
+- ✅ Django REST API setup
+- ✅ JWT Authentication using `djangorestframework-simplejwt`
+- ✅ Telegram Bot with polling support (`bot_polling.py`)
+- ✅ Telegram Webhook (optional, via ngrok)
+- ✅ Store Telegram user data (`TelegramUser` model)
+- ✅ Celery-ready config (for task queues)
 
 ## 📁 Project Structure
 
-
 django_internship_project/
-├── myapp/
-│ ├── models.py
-│ ├── views.py
-│ ├── urls.py
-│ └── ...
-├── bot_polling.py
-├── backend/
-│ ├── settings.py
-│ ├── urls.py
-│ └── ...
+│
+├── backend/ # Django main settings & URLs
+├── myapp/ # Telegram handlers and model
+├── bot_polling.py # Starts bot with polling
+├── db.sqlite3 # Database
+├── manage.py
 └── requirements.txt
 
-bash
-Copy code
+markdown
+Copy
+Edit
 
-## 🚀 Getting Started
+## ⚙️ Setup Instructions
 
-```bash
-git clone https://github.com/your-username/django_internship_project.git
-cd django_internship_project
-python -m venv venv
-venv\Scripts\activate
+1. **Install dependencies**
 pip install -r requirements.txt
+
+markdown
+Copy
+Edit
+
+2. **Apply migrations**
+python manage.py makemigrations
 python manage.py migrate
+
+markdown
+Copy
+Edit
+
+3. **Run development server**
+python manage.py runserver
+
+markdown
+Copy
+Edit
+
+4. **Run Telegram bot (Polling)**
 python bot_polling.py
-🤖 Telegram Bot Commands
-/start – Welcomes the user
 
-Replies with echo to any text message
+markdown
+Copy
+Edit
 
-User data stored in TelegramUser model
+5. **Test on Telegram**
+Open Telegram and message your bot: [@satyamintern_bot](https://t.me/satyamintern_bot)
 
-🛡 Security
-JWT tokens are configured using SimpleJWT
+## 📦 Tech Stack
 
-CSRF disabled only for webhook view
+- Python 3
+- Django 5.x
+- Django REST Framework
+- Telegram Bot (pyTelegramBotAPI)
+- Celery (optional)
+- SQLite
 
-Debug = False in production recommended
+---
 
-
+> Developed with ❤️ by Satyam Vohra for internship purposes.
