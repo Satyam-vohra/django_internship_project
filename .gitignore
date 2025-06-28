@@ -4,3 +4,7 @@ __pycache__/
 *.pyo 
 *.log 
 *.sqlite3 
+venv/ 
+__pycache__/ 
+*.pyc 
+*.sqlite3 
